@@ -97,18 +97,14 @@ class ViewController: UIViewController {
         } else if ope == 4 {
             num3 = num2 / num1
         }
-        colorText()
+        label.textColor = textColor()
         label.text = String(num3)
     }
     
-    func colorText() {
-        if num3 >= 10 {
-            label.textColor = .red
-        } else if num3 <= -10 {
-            label.textColor = .blue
-        } else {
-            label.textColor = .black
-        }
+    func textColor() -> UIColor {
+        if num3 >= 10 { return .red }
+        if num3 <= -10 { return .blue }
+        return .black
     }
     
     @IBAction func onClear() {
